@@ -1,0 +1,4 @@
+import test from 'node:test';import assert from 'node:assert/strict';import {dbToGain,formatDb,clampDb} from '../src/levels.mjs';
+test('the dB fader follows a logarithmic amplitude law',()=>{assert.equal(dbToGain(0),1);assert.ok(Math.abs(dbToGain(-6.020599913)-.5)<1e-9);assert.ok(Math.abs(dbToGain(-20)-.1)<1e-12);assert.ok(Math.abs(dbToGain(-18)-.125892541)<1e-9);});
+test('equal dB changes give equal ratios, not equal linear differences',()=>{const ratio=10**(-3/20);for(const db of [-6,-12,-18,-30])assert.ok(Math.abs(dbToGain(db-3)/dbToGain(db)-ratio)<1e-12);});
+test('the bottom of the fader is silence and the top cannot boost',()=>{assert.equal(dbToGain(-48),0);assert.equal(dbToGain(-100),0);assert.equal(dbToGain(20),1);assert.equal(clampDb(NaN),-48);assert.equal(formatDb(-48),'−∞ dB');});

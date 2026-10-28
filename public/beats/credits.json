@@ -1,0 +1,54 @@
+[
+  {
+    "id": "jazz",
+    "author": "SergeyIonov",
+    "source": "https://freesound.org/people/SergeyIonov/sounds/467374/",
+    "download": "https://cdn.freesound.org/previews/467/467374_7493652-hq.mp3",
+    "license": "CC0-1.0",
+    "title": "Jazz Hop",
+    "bpm": 119,
+    "bars": 4,
+    "file": "/beats/jazz.wav",
+    "adaptations": "Four/two-bar excerpt; slight tempo correction, level matching, 1/3 ms boundary fades; HQ MP3 decoded to PCM WAV.",
+    "duration": 8.067226890756302
+  },
+  {
+    "id": "funk",
+    "author": "lezaarth",
+    "source": "https://freesound.org/people/lezaarth/sounds/242590/",
+    "download": "https://cdn.freesound.org/previews/242/242590_2023214-hq.mp3",
+    "license": "CC0-1.0",
+    "title": "Pocket Funk",
+    "bpm": 100,
+    "bars": 4,
+    "file": "/beats/funk.wav",
+    "adaptations": "Four/two-bar excerpt; slight tempo correction, level matching, 1/3 ms boundary fades; HQ MP3 decoded to PCM WAV.",
+    "duration": 9.6
+  },
+  {
+    "id": "electro",
+    "author": "SergeyIonov",
+    "source": "https://freesound.org/people/SergeyIonov/sounds/467378/",
+    "download": "https://cdn.freesound.org/previews/467/467378_7493652-hq.mp3",
+    "license": "CC0-1.0",
+    "title": "Slow Electro",
+    "bpm": 120,
+    "bars": 4,
+    "file": "/beats/electro.wav",
+    "adaptations": "Four/two-bar excerpt; slight tempo correction, level matching, 1/3 ms boundary fades; HQ MP3 decoded to PCM WAV.",
+    "duration": 8.0
+  },
+  {
+    "id": "house",
+    "author": "SergeyIonov",
+    "source": "https://freesound.org/people/SergeyIonov/sounds/467375/",
+    "download": "https://cdn.freesound.org/previews/467/467375_7493652-hq.mp3",
+    "license": "CC0-1.0",
+    "title": "Classic House",
+    "bpm": 117,
+    "bars": 2,
+    "file": "/beats/house.wav",
+    "adaptations": "Four/two-bar excerpt; slight tempo correction, level matching, 1/3 ms boundary fades; HQ MP3 decoded to PCM WAV.",
+    "duration": 4.102564102564102
+  }
+]

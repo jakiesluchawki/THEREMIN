@@ -1,0 +1,7 @@
+import test from 'node:test';import assert from 'node:assert/strict';
+import {palmRoll,expressionFromRoll} from '../src/expression.mjs';
+const pose=(dx,dy)=>{const p=Array.from({length:21},()=>({x:.5,y:.7}));p[9]={x:.5-dx,y:.7-dy};return p;};
+test('an upright palm and tracking loss leave the sound neutral',()=>{assert.equal(palmRoll(pose(0,.3),1.6),0);assert.equal(palmRoll(undefined),0);assert.equal(palmRoll(pose(0,0)),0);assert.deepEqual(expressionFromRoll(0),{cutoff:4500,vibratoCents:0,vibratoRate:5.4});});
+test('mirrored right and left palm rotation produce opposite expression without changing pitch',()=>{const left=palmRoll(pose(-.15,.3),1.6),right=palmRoll(pose(.15,.3),1.6);assert.ok(left<0&&right>0);assert.ok(Math.abs(left+right)<1e-12);assert.ok(expressionFromRoll(left).cutoff<4500);assert.ok(expressionFromRoll(right).cutoff>4500);assert.ok(expressionFromRoll(right).vibratoCents>0);assert.equal(expressionFromRoll(left).vibratoCents,0);});
+test('roll is independent of hand size and respects image aspect',()=>{assert.ok(Math.abs(palmRoll(pose(.1,.2),1.6)-palmRoll(pose(.05,.1),1.6))<1e-12);assert.ok(Math.abs(palmRoll(pose(.1,.2),1.6)-palmRoll(pose(.16,.2),1))<1e-12);assert.equal(palmRoll(pose(.01,.3),1.6),0);});
+test('extreme angles and invalid inputs cannot create unbounded audio parameters',()=>{assert.equal(palmRoll(pose(1,.001)),1);assert.equal(palmRoll(pose(-1,.001)),-1);assert.equal(palmRoll(pose(NaN,.3)),0);assert.equal(expressionFromRoll(50).vibratoCents,28);assert.ok(expressionFromRoll(-50).cutoff>800);});

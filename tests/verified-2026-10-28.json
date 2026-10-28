@@ -1,0 +1,80 @@
+{
+  "unit_tests": 30,
+  "unit_result": "passed",
+  "browser_audio": [
+    "single part formant choir RMS 0.01765, peak 0.049",
+    "8-part choir RMS 0.01191, peak 0.044",
+    "24 oscillator layers across 8 harmonic parts",
+    "all 8 parts tuned to chord tones",
+    "vocoder-style voice RMS 0.01039, peak 0.031",
+    "choir mutes to silence",
+    "classic theremin playable",
+    "choir routes into recording mix"
+  ],
+  "simulated_hand_integration": [
+    "cursor visible during performance",
+    "hover opens full menu",
+    "pinch confirms beat and closes menu",
+    "G major selected by hand",
+    "Kiss Me chorus and original key selected by hand",
+    "vocoder selected by hand",
+    "chord-safe scale selected by hand",
+    "reverb selected by hand",
+    "register selected by hand",
+    "mute selected by hand",
+    "muted instrument reopens menu and resumes by hand",
+    "hands open from 1 to 8 harmonic parts",
+    "right and left rotation expression",
+    "hand loss cancels dwell"
+  ],
+  "live_camera_gesture_verification": "Not performed by agent; musical feel and physical hand calibration need player trial.",
+  "song": "Kiss Me: full recording-specific album arrangement, Eb major, original YouTube K2tbQ_g2VbQ.",
+  "song_sources": [
+    "https://spytunes.com/kiss-me-chords/",
+    "https://www.bellandcomusic.com/kiss-me.html",
+    "https://chordify.net/chords/sixpence-none-the-richer-songs/kiss-me-11-chords?version=youtube:K2tbQ_g2VbQ"
+  ],
+  "real_youtube_verification": {
+    "source": "https://www.youtube.com/watch?v=LCkDXpq5d80",
+    "result": "Actual embedded YouTube played in the in-app browser; native player showed Pause / Wstrzymaj film and app clock advanced to 0:05. Manual Eb→Ebmaj7 change and pause were verified.",
+    "full_song_automatic_chord_alignment": "Not claimed or verified; default manual chords; Auto from user anchor follows player time for the selected section only."
+  },
+  "backing_gesture_integration": [
+    "a beat stops song backing",
+    "song mode stops beat",
+    "manual chord holds during video playback",
+    "one held pinch never repeats",
+    "new pinch advances without moving cursor",
+    "auto position freezes on paused video",
+    "hand opening reaches eight choir parts with backing active"
+  ],
+  "latest_behavior": {
+    "left_hand": "volume and choir density only",
+    "right_hand": "vertical chord register, timbre, menu pointer; no chord selection",
+    "chords": "Full original timeline, automatic sections and cue lookup using native YouTube time, no section looping/manual choice.",
+    "backing_volume": "logarithmic dB fader, default -18 dB, gesture steps +/-3 dB, bottom mute"
+  },
+  "latest_browser_fixture": [
+    "manual chord picker absent",
+    "right opening cannot add voices",
+    "left opening expands 1 to 8 parts",
+    "right height changes register without volume/density changes",
+    "neither hand pinch nor horizontal right motion selects chords",
+    "left volume does not affect chord",
+    "video time changes chord automatically",
+    "right hand navigates menu",
+    "gesture -3 dB and fader use dB-to-gain law",
+    "fader bottom sends zero volume",
+    "forward/backward seeks across whole original arrangement",
+    "paused player does not advance harmony",
+    "section switch and section re-anchor absent"
+  ],
+  "historical_checks_note": "Earlier entries below describe earlier iterations, not current controls or song synchronization.",
+  "music_verification": "Recording-specific public transcription plus guitar-score seventh corrections. Not independently audited by listening to every change. No complete spectral analysis performed.",
+  "current_real_youtube_verification": {
+    "source": "https://www.youtube.com/watch?v=K2tbQ_g2VbQ",
+    "duration_seconds": 208.701,
+    "result": "Actual original embedded and played on localhost; native time and app section/chord agreed during playback. Whole-map forward/backward seek behavior separately passed the controlled browser fixture.",
+    "music_accuracy": "Public recording-specific annotation with score-based corrections; no independent listen-through of all chord changes."
+  }
+}
